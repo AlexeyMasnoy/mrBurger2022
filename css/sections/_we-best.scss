@@ -1,0 +1,27 @@
+.we-best {
+    background: url(/img/bg/we-best-bg.jpg) center center;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+
+    &__container {
+
+    }
+    &__content {
+        display: flex;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__title {
+        font-size: 24px;
+        font-family: "Lifehack-Medium";
+        color: #2f3234;
+        margin-bottom: 20px;
+    }
+}

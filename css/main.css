@@ -1,0 +1,370 @@
+@charset "UTF-8";
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.42;
+  -moz--webkit-font-smoothing: antialiased;
+  -ms--webkit-font-smoothing: antialiased;
+  -o--webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  color: #2f3234;
+  position: relative;
+  font-family: "Ubuntu-Light";
+}
+
+.vertical-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.section {
+  height: 100vh;
+  min-height: 650px;
+}
+
+.section__title {
+  color: #f9b43b;
+  font-size: 72px;
+  font-family: "Gagalin-Regular";
+}
+
+.white-title {
+  color: #fff;
+}
+
+.black-title {
+  color: #2f3234;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: normal;
+}
+
+ul, p {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.button {
+  display: inline-block;
+  background: #e45028;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 9px 16px;
+  font-family: "Ubuntu-Medium";
+}
+.button:hover {
+  background-color: #db3d11;
+}
+
+@font-face {
+  font-family: "Gagalin-Regular";
+  src: url("/fonts/Gagalin-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Gagalin-Regular.otf") format("opentype"), url("/fonts/Gagalin-Regular.woff") format("woff"), url("/fonts/Gagalin-Regular.ttf") format("truetype"), url("/fonts/Gagalin-Regular.svg#Gagalin-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/fonts/Ubuntu.eot?#iefix") format("embedded-opentype"), url("/fonts/Ubuntu.woff") format("woff"), url("/fonts/Ubuntu.ttf") format("truetype"), url("/fonts/Ubuntu.svg#Ubuntu") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu-Light";
+  src: url("/fonts/Ubuntu-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/Ubuntu-Light.woff") format("woff"), url("/fonts/Ubuntu-Light.ttf") format("truetype"), url("/fonts/Ubuntu-Light.svg#Ubuntu-Light") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lifehack-Medium";
+  src: url("/fonts/Lifehack-Medium.eot?#iefix") format("embedded-opentype"), url("/fonts/Lifehack-Medium.otf") format("opentype"), url("/fonts/Lifehack-Medium.woff") format("woff"), url("/fonts/Lifehack-Medium.ttf") format("truetype"), url("/fonts/Lifehack-Medium.svg#Lifehack-Medium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu-Medium";
+  src: url("/fonts/Ubuntu-Medium.eot?#iefix") format("embedded-opentype"), url("/fonts/Ubuntu-Medium.woff") format("woff"), url("/fonts/Ubuntu-Medium.ttf") format("truetype"), url("/fonts/Ubuntu-Medium.svg#Ubuntu-Medium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* -------------------------- */
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.maincontent {
+  flex: 1 1 auto;
+}
+
+/* -------------------------- */
+[class*=__container] {
+  max-width: 1087px;
+  margin: 0px auto;
+  padding: 0 15px;
+}
+@media only screen and (max-width: 1087px) {
+  [class*=__container] {
+    max-width: 970px;
+    padding: 0px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  [class*=__container] {
+    max-width: 750px;
+    padding: 0px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  [class*=__container] {
+    max-width: 500px;
+  }
+}
+
+.we-do {
+  background: url("/img/bg/we-do-bg.jpg") center center;
+  background-size: cover;
+  position: relative;
+}
+.we-do__container {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 50px 0 0px 0px;
+}
+.we-do__image {
+  display: flex;
+  flex: 1 1 50%;
+  justify-content: center;
+}
+.we-do__content {
+  justify-content: center;
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header__container {
+  display: flex;
+  height: 92px;
+  align-items: center;
+}
+
+.header__menu {
+  flex: 1 1 auto;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 992px) {
+  .menu {
+    display: none;
+  }
+}
+.menu__body {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu__list {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+.menu__item {
+  margin-right: 15px;
+}
+.menu__item:last-child {
+  margin-right: 0px;
+}
+.menu__item:last-child:after {
+  display: none;
+}
+.menu__item:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fff;
+  margin-left: 15px;
+}
+.menu__link {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: "Ubuntu-Medium";
+}
+.menu__link:hover {
+  text-decoration: underline;
+}
+
+/* ------------ Burger menu ------------- */
+.icon-menu {
+  position: relative;
+  flex: 0 0 30px;
+  height: 18px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.icon-menu::before, .icon-menu::after {
+  content: "";
+  background-color: #fff;
+  height: 2px;
+}
+.icon-menu span {
+  height: 2px;
+  background-color: #fff;
+}
+@media only screen and (max-width: 992px) {
+  .icon-menu {
+    display: flex;
+  }
+}
+
+.we-do__content-text {
+  font-size: 65px;
+  color: #fff;
+  font-family: "Lifehack-Medium";
+  text-transform: lowercase;
+  line-height: 1em;
+}
+
+.we-best {
+  background: url(/img/bg/we-best-bg.jpg) center center;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+.we-best__content {
+  display: flex;
+}
+.we-best__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.we-best__title {
+  font-size: 24px;
+  font-family: "Lifehack-Medium";
+  color: #2f3234;
+  margin-bottom: 20px;
+}

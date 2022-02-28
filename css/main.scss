@@ -1,0 +1,21 @@
+// Helo
+// colors variable
+
+$orange: #e45028;
+$yellow: #f9b43b;
+$black: #2f3234;
+$red: #e35028;
+
+// media queries
+
+
+// layout 
+
+@import "layout/_reset.scss";
+@import "layout/_layout.scss";
+@import "layout/_fonts.scss";
+
+// sections
+
+@import "sections/_we-do.scss";
+@import "sections/_we-best.scss";

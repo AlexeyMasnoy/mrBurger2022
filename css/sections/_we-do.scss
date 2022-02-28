@@ -1,0 +1,177 @@
+/* -------------------------- */
+.wrapper {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.maincontent {
+	flex: 1 1 auto;
+}
+
+/* -------------------------- */
+
+[class*="__container"] {
+	max-width: 1087px;
+	margin: 0px auto;
+	padding: 0 15px;
+
+	// PC
+	
+	@media only screen and (max-width: 1087px) {
+		max-width: 970px;
+		padding: 0px;
+	}
+	// Tablet
+	
+	@media only screen and (max-width: 992px) {
+		max-width: 750px;
+		padding: 0px;
+	}
+	// Tablet
+	
+	@media only screen and (max-width: 767px) {
+		max-width: 500px;
+	}
+}
+.section {
+
+} 
+.we-do {
+	background: url('/img/bg/we-do-bg.jpg') center center;
+	background-size: cover;
+	position: relative;
+
+	&__container {
+		display: flex;
+		align-items: flex-end;
+    	flex-direction: row;
+		flex-wrap: wrap;
+		padding: 50px 0 0px 0px;
+	}
+	&__image {
+		display: flex;
+    flex: 1 1 50%;
+    justify-content: center;
+	}
+	&__content {
+		justify-content: center;
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	}
+}
+.header {
+
+}
+.header__container {
+	display: flex;
+	height: 92px;
+	align-items: center;
+
+}
+.header__logo {
+
+}
+.header__menu {
+	flex: 1 1 auto;
+}
+.menu {
+	display: flex;
+	justify-content: flex-end;
+
+	@media only screen and (max-width: 992px) {
+		display: none;
+	}
+	&__body {
+		display: flex;
+		justify-content: flex-end;
+
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		margin-right: 15px;
+	}
+	&__item {
+		margin-right: 15px;
+
+		&:last-child {
+			margin-right: 0px;
+
+			&:after {
+				display: none;
+			}
+		}
+
+		&:after {
+			content: "";
+			display: inline-block;
+			vertical-align: middle;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background: #fff;
+			margin-left: 15px;
+		}
+	
+	}
+	&__link {
+		color: #fff;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 13px;
+			display: inline-block;
+		    vertical-align: middle;
+		    text-decoration: none;
+		    font-family: 'Ubuntu-Medium';
+
+			&:hover {
+				text-decoration: underline;
+			}
+	}
+}
+.header__button {
+
+}
+
+.we-do__container {}
+
+
+/* ------------ Burger menu ------------- */
+
+.icon-menu {
+	position: relative;
+	flex: 0 0 30px;
+	height: 18px;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&::before, &::after {
+		content: "";
+		background-color: #fff;
+		height: 2px;
+	}
+
+	span {
+		height: 2px;
+		background-color: #fff;
+	}
+
+	@media only screen and (max-width: 992px) {
+		display: flex;
+	}
+}
+
+.we-do__content-text {
+	font-size: 65px;
+  color: #fff;
+  font-family: "Lifehack-Medium";
+  text-transform: lowercase;
+  line-height: 1em;
+}
+
+
